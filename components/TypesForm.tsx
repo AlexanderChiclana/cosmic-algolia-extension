@@ -190,7 +190,8 @@ const TypesForm = (
             .limit(count)
             const objects = makeObjectIds(data.objects);
 
-            console.log('objects are ', objects)
+            console.log('Batch contains: ', objects)
+            console.log(`Getting ${skip} through ${skip + count} of ${data.total}`)
             const percentComplete = skip / data.total
             console.log('percentComplete: ', percentComplete)
 
