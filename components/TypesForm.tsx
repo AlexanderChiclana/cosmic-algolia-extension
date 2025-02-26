@@ -192,7 +192,7 @@ const TypesForm = (
 
             console.log('Batch contains: ', objects)
             console.log(`Getting ${skip} through ${skip + count} of ${data.total}`)
-            const percentComplete = skip / data.total
+            const percentComplete = (skip / data.total) * 100
             console.log('percentComplete: ', percentComplete)
 
           try {
