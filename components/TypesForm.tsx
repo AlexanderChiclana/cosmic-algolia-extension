@@ -165,7 +165,6 @@ const TypesForm = (
       // Add ObjectIDs
       const objects = makeObjectIds(data.objects);
 
-      console.log('objects 1', objects);
       try {
         const addObjectsRes = await algoliaIndex.saveObjects(objects)
         const { taskIDs } = addObjectsRes
@@ -192,6 +191,8 @@ const TypesForm = (
             const objects = makeObjectIds(data.objects);
 
             console.log('objects are ', objects)
+            const percentComplete = skip / data.total
+            console.log('percentComplete: ', percentComplete)
 
           try {
             const addObjectsRes = await algoliaIndex.saveObjects(objects)
