@@ -191,11 +191,14 @@ const TypesForm = (
             .limit(count)
             const objects = makeObjectIds(data.objects);
 
+            console.log('objects are ', objects)
+
           try {
             const addObjectsRes = await algoliaIndex.saveObjects(objects)
             const { taskIDs } = addObjectsRes
             await algoliaIndex.waitTask(taskIDs[0])
           } catch (e: any) {
+            console.error('error with the most recent group')
             toast({
               variant: "destructive",
               title: "Something went wrong saving to Algolia",
